@@ -10,7 +10,7 @@
         <!-- comment footer -->
         <div class="d-flex justify-content-between">
             <div>
-                <a v-show="!showForm" href="#" @click.prevent="showForm = true"><i class="fa fa-plus" aria-hidden="true"></i> add reply</a>
+                <a v-show="!showForm && depth < 3" href="#" @click.prevent="showForm = true"><i class="fa fa-plus" aria-hidden="true"></i> add reply</a>
             </div>
             <a href="#" v-show="replies.length" @click.prevent="showReplies = !showReplies ">{{ showReplies? 'hide replies x' : 'show replies' }}</a>
         </div>
@@ -28,6 +28,7 @@
             <div v-if="replies.length && showReplies" v-for="reply in replies" :key="reply.id" class="ms-4">
                 <comment
                     :comment="reply"
+                    :depth="depth + 1"
                 ></comment>
             </div>
 
@@ -44,7 +45,7 @@
                 showReplies: false,
             }
         },
-        props: ['comment'],
+        props: ['comment', 'depth'],
     }
 </script>
 

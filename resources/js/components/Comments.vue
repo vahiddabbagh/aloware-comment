@@ -7,7 +7,10 @@
         > </comment-form>
 
         <div v-for="comment in mycomments">
-            <comment :comment="comment"> </comment>
+            <comment
+                :comment="comment"
+                :depth="1"
+            > </comment>
         </div>
 
     </div>

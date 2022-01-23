@@ -5298,6 +5298,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -5306,7 +5307,7 @@ __webpack_require__.r(__webpack_exports__);
       showReplies: false
     };
   },
-  props: ['comment']
+  props: ['comment', 'depth']
 });
 
 /***/ }),
@@ -5387,6 +5388,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
 //
 //
 //
@@ -28814,8 +28818,8 @@ var render = function () {
                 {
                   name: "show",
                   rawName: "v-show",
-                  value: !_vm.showForm,
-                  expression: "!showForm",
+                  value: !_vm.showForm && _vm.depth < 3,
+                  expression: "!showForm && depth < 3",
                 },
               ],
               attrs: { href: "#" },
@@ -28883,7 +28887,11 @@ var render = function () {
           ? _c(
               "div",
               { key: reply.id, staticClass: "ms-4" },
-              [_c("comment", { attrs: { comment: reply } })],
+              [
+                _c("comment", {
+                  attrs: { comment: reply, depth: _vm.depth + 1 },
+                }),
+              ],
               1
             )
           : _vm._e()
@@ -29033,7 +29041,11 @@ var render = function () {
       }),
       _vm._v(" "),
       _vm._l(_vm.mycomments, function (comment) {
-        return _c("div", [_c("comment", { attrs: { comment: comment } })], 1)
+        return _c(
+          "div",
+          [_c("comment", { attrs: { comment: comment, depth: 1 } })],
+          1
+        )
       }),
     ],
     2
