@@ -3,7 +3,7 @@
         <!-- comment header -->
         <div class="d-flex justify-content-between">
             <h4 class="p-2 small"> <i class="fa fa-user me-2 text-secondary" aria-hidden="true"></i> {{ comment.author }} </h4>
-            <h5 class="small text-secondary"> <i class="fa fa-calendar" aria-hidden="true"></i> {{ comment.created_at }}</h5>
+            <h5 class="p-2 small text-secondary"> <i class="fa fa-calendar" aria-hidden="true"></i> {{ comment.created_at }}</h5>
         </div>
         <!-- comment content -->
         <p class="border rounded p-2 bg-light">{{ comment.content }}</p>

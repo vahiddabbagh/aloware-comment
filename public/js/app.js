@@ -28792,7 +28792,7 @@ var render = function () {
           _vm._v(" " + _vm._s(_vm.comment.author) + " "),
         ]),
         _vm._v(" "),
-        _c("h5", { staticClass: "small text-secondary" }, [
+        _c("h5", { staticClass: "p-2 small text-secondary" }, [
           _c("i", {
             staticClass: "fa fa-calendar",
             attrs: { "aria-hidden": "true" },
@@ -28917,7 +28917,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("transition", { attrs: { name: "fade" } }, [
     _vm.show
-      ? _c("div", { staticClass: "p-3", attrs: { id: "commentForm" } }, [
+      ? _c("div", { staticClass: "p-3 border", attrs: { id: "commentForm" } }, [
           _c("p", { staticClass: "fw-bold" }, [_vm._v("Add comment:")]),
           _vm._v(" "),
           _c(

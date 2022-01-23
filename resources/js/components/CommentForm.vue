@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div id="commentForm" class="p-3" v-if="show" >
+        <div id="commentForm" class="p-3 border" v-if="show" >
             <p class="fw-bold">Add comment:</p>
 
             <form @submit.prevent="addComment">
