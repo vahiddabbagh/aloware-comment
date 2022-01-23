@@ -13,7 +13,7 @@ class CommentTest extends TestCase
      */
     public function test_comments_page()
     {
-        $response = $this->get('/');
+        $response = $this->get('/comments');
 
         $response->assertStatus(200);
     }
